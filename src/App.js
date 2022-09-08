@@ -7,6 +7,7 @@ import Top from "./routes/home/Top";
 import Auth from "./routes/auth/Auth";
 import Login from "./routes/auth/Login";
 import Register from "./routes/auth/Register";
+import DetailThread from "./routes/DetailThread";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route index element={<Login />} />
         <Route path="register" element={<Register />} />
       </Route>
+      <Route path="/:id" element={<DetailThread />} />
     </Routes>
   );
 };
