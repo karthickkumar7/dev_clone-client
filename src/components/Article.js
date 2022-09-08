@@ -3,7 +3,7 @@ import { RiHeart2Line, RiMessage3Line, RiBookmarkLine } from "react-icons/ri";
 
 const Article = ({ username, date, title, tags }) => {
   return (
-    <article className="w-full h-[250px] mb-2 py-3 flex flex-col rounded shadow-sm bg-white">
+    <article className="w-full min-h-[220px] mb-2 py-3 flex flex-col rounded shadow-sm bg-white">
       <section className="w-full h-1/6 my-1 flex">
         <div className="w-[80px] h-full flex justify-center items-center">
           {/* profile img */}
