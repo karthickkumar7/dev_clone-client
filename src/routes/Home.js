@@ -1,10 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import HeaderNav from "../../components/HeaderNav";
-import SubNav from "./SubNav";
-import HomeLeft from "./HomeLeft";
-import HomeRight from "./HomeRight";
+import HeaderNav from "../components/HeaderNav";
+import SubNav from "../components/home/SubNav";
+import HomeLeft from "../components/home/HomeLeft";
+import HomeRight from "../components/home/HomeRight";
 
 const Home = () => {
   return (

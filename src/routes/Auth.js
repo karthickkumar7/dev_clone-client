@@ -1,14 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import HeaderNav from "../../components/HeaderNav";
+import HeaderNav from "../components/HeaderNav";
 
 const Auth = () => {
   return (
-    <div>
+    <div className="w-screen h-screen bg-slate-100">
       <HeaderNav />
       <Outlet />
-      <div className="w-screen h-[200px] bg-slate-300"></div>
     </div>
   );
 };
