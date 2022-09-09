@@ -33,7 +33,7 @@ const TagDetailHeader = () => {
             <IoMdPricetags className="mr-2 text-slate-700" />
             <span>Follow</span>
           </button>
-          <h1 className="text-lg text-slate-600 font-semibold">
+          <h1 className="my-2 text-lg text-slate-600 font-semibold">
             23 Threads published
           </h1>
           <h1 className="text-slate-600 font-semibold">69 followers</h1>
