@@ -6,7 +6,7 @@ const HeaderNav = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="w-screen h-[60px] flex justify-center items-center border-b bg-white">
+    <nav className="w-screen h-[60px] flex justify-center items-center border-b bg-white overflow-hidden">
       <div className="w-[1400px] h-full flex justify-between items-center">
         {/* left */}
         <div className="flex">
