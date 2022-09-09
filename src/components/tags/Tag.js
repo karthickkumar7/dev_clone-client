@@ -1,4 +1,5 @@
 import React from "react";
+import { IoMdPricetags } from "react-icons/io";
 
 const Tag = ({ color }) => {
   console.log(color);
@@ -24,8 +25,9 @@ const Tag = ({ color }) => {
           </span>
         </div>
         <div className="w-full h-1/6">
-          <button className="w-[100px] px-2 py-1 rounded-lg font-semibold border hover:bg-slate-200">
-            Follow{" "}
+          <button className="w-[100px] px-2 py-1 flex items-center rounded-lg font-semibold border hover:bg-slate-200">
+            <IoMdPricetags className="mr-2 text-slate-700" />
+            <span>Follow</span>
           </button>
         </div>
       </section>

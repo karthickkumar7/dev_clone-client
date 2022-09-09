@@ -7,7 +7,7 @@ const SubNav = () => {
   return (
     <div className="w-full h-[50px] px-2 flex items-center">
       <Link
-        to="/"
+        to=""
         className={`${
           pathname === "/" ? "text-lg font-bold" : ""
         } mr-3 px-2 py-1 cursor-pointer rounded text-slate-700 hover:bg-white`}

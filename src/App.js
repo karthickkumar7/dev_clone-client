@@ -11,6 +11,7 @@ import DetailThread from "./routes/DetailThread";
 import ThreadCreator from "./components/ThreadCreator";
 import TagsLayout from "./routes/TagsLayout";
 import TagsList from "./components/tags/TagsList";
+import Tagdetail from "./components/tags/Tagdetail";
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
       <Route path="/create" element={<ThreadCreator />} />
       <Route path="/tags" element={<TagsLayout />}>
         <Route index element={<TagsList />} />
-        <Route path=":tag" element={<h1>Tag</h1>} />
+        <Route path=":tag" element={<Tagdetail />} />
       </Route>
     </Routes>
   );
