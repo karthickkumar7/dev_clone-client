@@ -24,7 +24,9 @@ const SideNav = () => {
         </div>
         <div className="w-full py-2 flex items-center rounded cursor-pointer hover:underline hover:bg-blue-200">
           <GrStatusInfoSmall className="text-xl mr-2" />
-          <h1 className="text-lg">About</h1>
+          <Link to="/about" className="text-lg">
+            About
+          </Link>
         </div>
         <div className="w-full py-2 flex items-center rounded cursor-pointer hover:underline hover:bg-blue-200">
           <SiHotjar className="text-xl text-red-500 mr-2" />
