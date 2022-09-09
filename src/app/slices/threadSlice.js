@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { getAllthreadsApi, getSinglethreadsApi } from "../api/threadApi";
+import {
+  createThreadApi,
+  getAllthreadsApi,
+  getSinglethreadsApi,
+  getUserThreadsApi,
+} from "../api/threadApi";
 
 const initialState = {
   isLoading: false,
@@ -9,6 +14,7 @@ const initialState = {
   success: null,
   error: null,
   threads: [],
+  userThreads: [],
   thread: null,
 };
 
@@ -36,12 +42,49 @@ export const getSingleThread = createAsyncThunk(
   }
 );
 
+export const createThread = createAsyncThunk(
+  "threads/createThread",
+  async (payload, thunkApi) => {
+    try {
+      const { data } = await createThreadApi(payload);
+      return data;
+    } catch ({ response }) {
+      return thunkApi.rejectWithValue(response.data);
+    }
+  }
+);
+export const getUserThreads = createAsyncThunk(
+  "threads/getUserThreads",
+  async (payload, thunkApi) => {
+    try {
+      const { data } = await getUserThreadsApi();
+      return data;
+    } catch ({ response }) {
+      return thunkApi.rejectWithValue(response.data);
+    }
+  }
+);
+
 const threadSlice = createSlice({
-  name: "threads",
+  name: "thread",
 
   initialState,
 
-  reducers: {},
+  reducers: {
+    setError: (state, { payload }) => {
+      state.isSuccess = false;
+      state.isError = true;
+      state.success = null;
+      state.error = payload;
+    },
+    resetState: (state) => {
+      state.isLoading = false;
+      state.isSuccess = false;
+      state.isError = true;
+      state.success = null;
+      state.error = null;
+    },
+  },
 
   extraReducers: (builder) => {
     // get all threads
@@ -82,9 +125,47 @@ const threadSlice = createSlice({
       state.success = null;
       state.error = payload?.msg || "Something went wrong!";
     });
+    // create thread
+    builder.addCase(createThread.pending, (state, { payload }) => {
+      state.isLoading = true;
+    });
+    builder.addCase(createThread.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.isError = false;
+      state.success = payload.msg;
+      state.error = null;
+      state.threads.push(payload.thread);
+    });
+    builder.addCase(createThread.rejected, (state, { payload }) => {
+      state.isLoading = false;
+      state.isSuccess = false;
+      state.isError = true;
+      state.success = null;
+      state.error = payload?.msg || "Something went wrong!";
+    });
+    // get user thread
+    builder.addCase(getUserThreads.pending, (state, { payload }) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getUserThreads.fulfilled, (state, { payload }) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.isError = false;
+      state.success = payload.msg;
+      state.error = null;
+      state.userThreads = payload.threads;
+    });
+    builder.addCase(getUserThreads.rejected, (state, { payload }) => {
+      state.isLoading = false;
+      state.isSuccess = false;
+      state.isError = true;
+      state.success = null;
+      state.error = payload?.msg || "Something went wrong!";
+    });
   },
 });
 
-export const {} = threadSlice.actions;
+export const { setError, resetState } = threadSlice.actions;
 
 export default threadSlice.reducer;
