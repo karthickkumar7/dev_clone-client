@@ -8,7 +8,7 @@ import { AiTwotoneTags } from "react-icons/ai";
 
 const SideNav = () => {
   return (
-    <div className="w-[240px] h-[250px] flex ">
+    <div className="w-[240px] h-[250px] mt-4 flex ">
       <div className="w-full flex flex-col items-start">
         <div className="w-full py-2 flex items-center rounded cursor-pointer hover:underline hover:bg-blue-200">
           <HiHome className="text-xl mr-2" />

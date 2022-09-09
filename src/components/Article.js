@@ -48,9 +48,9 @@ const Article = ({ _id, username, date, title, tags }) => {
             {title}
           </h1>
           <div className="my-4">
-            {tags?.map((tag) => (
+            {tags?.map((tag, i) => (
               <span
-                key={tag}
+                key={`${tag}-${i}`}
                 className="mr-3 px-2 py-1 hover:bg-sky-100 rounded cursor-pointer"
                 onClick={() => tagsRedirectHandler(tag)}
               >
