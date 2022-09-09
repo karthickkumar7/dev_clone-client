@@ -30,7 +30,9 @@ const SideNav = () => {
         </div>
         <div className="w-full py-2 flex items-center rounded cursor-pointer hover:underline hover:bg-blue-200">
           <SiHotjar className="text-xl text-red-500 mr-2" />
-          <h1 className="text-lg">Popular</h1>
+          <Link to="/popular" className="text-lg">
+            Popular
+          </Link>
         </div>
         <div className="w-full py-2 flex items-center rounded cursor-pointer hover:underline hover:bg-blue-200">
           <MdFiberNew className="text-xl text-green-500 mr-2" />

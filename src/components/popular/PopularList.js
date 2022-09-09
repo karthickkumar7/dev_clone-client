@@ -1,12 +1,10 @@
 import React from "react";
-import Article from "../../components/Article";
-import ImgArticle from "../../components/ImgArticle";
-
-const Relevant = () => {
+import Article from "../Article";
+import ImgArticle from "../ImgArticle";
+const PopularList = () => {
   return (
     <>
       <ImgArticle />
-
       <Article
         title={"Hey Man Leave her alone!"}
         username="SimpBoy69"
@@ -35,4 +33,4 @@ const Relevant = () => {
   );
 };
 
-export default Relevant;
+export default PopularList;

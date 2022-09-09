@@ -3,7 +3,7 @@ import HeaderNav from "../components/HeaderNav";
 
 const About = () => {
   return (
-    <div className="w-full bg-[#f5f5f5] overflow-hidden">
+    <div className="w-full h-screen bg-[#f5f5f5] ">
       <HeaderNav />
       <div className="w-3/6 mx-auto border-2 rounded-md my-6 px-8 py-4 bg-white shadow-sm shadow-[#1717171a]">
         <h1 className="my-1">
