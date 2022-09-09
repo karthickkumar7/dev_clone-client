@@ -14,6 +14,8 @@ import TagsList from "./components/tags/TagsList";
 
 import Tagdetail from "./components/tags/Tagdetail";
 import About from "./routes/About";
+import Popular from "./routes/Popular";
+import PopularList from "./components/popular/PopularList";
 
 const App = () => {
   return (
@@ -34,6 +36,9 @@ const App = () => {
         <Route path=":tag" element={<Tagdetail />} />
       </Route>
       <Route path="/about" element={<About />} />
+      <Route path="/popular" element={<Popular />}>
+        <Route index element={<PopularList />} />
+      </Route>
     </Routes>
   );
 };
