@@ -14,8 +14,13 @@ const Tag = ({ color }) => {
         style={{ backgroundColor: color }}
       ></section>
       <section className="w-full h-[310px] p-4">
-        <div className="w-full h-1/6">
-          <h1 className="text-2xl font-bold">#Interracial</h1>
+        <div className="w-full h-1/6 flex justify-start items-center">
+          <h1
+            className="min-w-[150px] p-1 text-2xl rounded font-bold hover:bg-blue-50"
+            style={{}}
+          >
+            #Interracial
+          </h1>
         </div>
         <div className="w-full h-4/6">
           <p className="mb-2 font-light">

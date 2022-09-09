@@ -4,7 +4,7 @@ import HeaderNav from "../components/HeaderNav";
 
 const Tags = () => {
   return (
-    <div className="w-screen bg-slate-100">
+    <div className="w-screen bg-bgclight">
       <HeaderNav />
       <div className="w-full  flex justify-center">
         <Outlet />

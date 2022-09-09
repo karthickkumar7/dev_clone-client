@@ -1,22 +1,20 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 
 import HeaderNav from "../components/HeaderNav";
-import SubNav from "../components/home/SubNav";
 import HomeLeft from "../components/home/HomeLeft";
 import HomeRight from "../components/home/HomeRight";
 
-const Home = () => {
+import { Outlet } from "react-router-dom";
+
+const Popular = () => {
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center bg-bgclight scrollbar-hide">
+    <div className="w-screen min-h-screen flex flex-col items-center bg-bgclight">
       <HeaderNav />
       <div className="w-[1400px] flex">
         {/* left */}
         <HomeLeft />
         {/* content */}
         <div className="w-[800px] p-2">
-          {/* nav */}
-          <SubNav />
           {/* main */}
           <div className="w-full">
             <Outlet />
@@ -29,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Popular;

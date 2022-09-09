@@ -5,7 +5,6 @@ import TagsNav from "./TagsNav";
 const TagsList = () => {
   const genRandomColor = () => {
     const rand = () => Math.floor(Math.random() * 181);
-
     return `rgb(${rand()},${rand()},${rand()})`;
   };
 

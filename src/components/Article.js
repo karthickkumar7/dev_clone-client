@@ -2,11 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { RiHeart2Line, RiMessage3Line, RiBookmarkLine } from "react-icons/ri";
 
-const Article = ({ username, date, title, tags }) => {
+const Article = ({ _id, username, date, title, tags }) => {
   const navigate = useNavigate();
 
   const detailRedirectHandler = () => {
-    navigate(`/${title}`);
+    navigate(`/${_id}`);
   };
 
   const profileRedirectHandler = () => {

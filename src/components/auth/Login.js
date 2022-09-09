@@ -1,7 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import { login } from "../../app/slices/authSlice";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { isLoading, isLoggedIn, isError, error } = useSelector((s) => s.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+    dispatch(login({ username, password }));
+  };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn]);
+
   return (
     <div className="w-screen h-[900px] flex justify-center bg-slate-100">
       <div className="w-[1400px] h-full  flex justify-center items-center">
@@ -25,12 +46,19 @@ const Login = () => {
           </div>
           <form className="w-full flex flex-col">
             <div className="flex flex-col">
+              {isError && (
+                <h1 className="my-2 font-semibold text-center text-red-500 ">
+                  {error}
+                </h1>
+              )}
               <label htmlFor="username" className="mb-1">
                 username
               </label>
               <input
                 id="username"
                 type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="h-[50px] px-2 py-1 rounded outline-blue-600 border"
               />
             </div>
@@ -41,10 +69,15 @@ const Login = () => {
               <input
                 id="password"
                 type="text"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="h-[50px] px-2 py-1 rounded outline-blue-600 border"
               />
             </div>
-            <button className="h-[50px] my-4 px-2 py-1 text-white rounded font-semibold bg-sky-600 hover:bg-sky-500">
+            <button
+              className="h-[50px] my-4 px-2 py-1 text-white rounded font-semibold bg-sky-600 hover:bg-sky-500"
+              onClick={loginHandler}
+            >
               Continue
             </button>
           </form>
