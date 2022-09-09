@@ -8,7 +8,7 @@ import { Outlet } from "react-router-dom";
 
 const Popular = () => {
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center bg-slate-100">
+    <div className="w-screen min-h-screen flex flex-col items-center bg-bgclight">
       <HeaderNav />
       <div className="w-[1400px] flex">
         {/* left */}

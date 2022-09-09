@@ -8,7 +8,7 @@ import HomeRight from "../components/home/HomeRight";
 
 const Home = () => {
   return (
-    <div className="w-screen min-h-screen flex flex-col items-center bg-slate-100 scrollbar-hide">
+    <div className="w-screen min-h-screen flex flex-col items-center bg-bgclight scrollbar-hide">
       <HeaderNav />
       <div className="w-[1400px] flex">
         {/* left */}

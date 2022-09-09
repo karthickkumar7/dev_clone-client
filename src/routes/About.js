@@ -7,10 +7,10 @@ import HeaderNav from "../components/HeaderNav";
 
 const About = () => {
   return (
-    <div className="w-full h-screen bg-[#f5f5f5] ">
-      <div className="w-full min-h-screen bg-[#f5f5f5] overflow-hidden">
+    <div className="w-full h-screen bg-bgclight ">
+      <div className="w-full min-h-screen overflow-hidden">
         <HeaderNav />
-        <div className="w-3/6 mx-auto border-2 rounded-md my-6 px-8 py-4 bg-white shadow-sm shadow-[#1717171a]">
+        <div className="w-3/6 mx-auto border-2 rounded-md my-6 px-8 py-4 bg-white shadow-sm">
           <Title title={"About DEV"} />
           <Info>
             <p>

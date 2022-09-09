@@ -48,6 +48,7 @@ const authSlice = createSlice({
       state.isError = false;
       state.success = null;
       state.error = null;
+      localStorage.removeItem("dev-token");
     },
   },
 
@@ -57,11 +58,13 @@ const authSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(login.fulfilled, (state, { payload }) => {
+      state.isLoggedIn = true;
       state.isLoading = false;
       state.isSuccess = true;
       state.isError = false;
       state.success = payload.msg;
       state.error = null;
+      localStorage.setItem("dev-token", `Bearer ${payload.token}`);
     });
     builder.addCase(login.rejected, (state, { payload }) => {
       state.isLoading = false;
@@ -76,6 +79,7 @@ const authSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(register.fulfilled, (state, { payload }) => {
+      state.isLoggedIn = true;
       state.isLoading = false;
       state.isSuccess = true;
       state.isError = false;

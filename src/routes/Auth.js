@@ -5,7 +5,7 @@ import HeaderNav from "../components/HeaderNav";
 
 const Auth = () => {
   return (
-    <div className="w-screen h-screen bg-slate-100">
+    <div className="w-screen h-screen bg-bgclight">
       <HeaderNav />
       <Outlet />
     </div>

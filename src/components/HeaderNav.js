@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { AiOutlineAlert } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
+import { useSelector } from "react-redux";
+import NotLogHeaderRight from "./utils/NotLogHeaderRight";
+import LogHeaderRight from "./utils/LogHeaderRight";
 
 const HeaderNav = () => {
+  const { isLoggedIn } = useSelector((s) => s.auth);
   const navigate = useNavigate();
 
   return (
@@ -31,20 +35,7 @@ const HeaderNav = () => {
           </div>
         </div>
         {/* right */}
-        <div>
-          <button
-            className="w-[80px] h-[40px] mr-2 px-2 py-1 rounded font-semibold hover:bg-slate-200 hover:underline"
-            onClick={() => navigate("/auth")}
-          >
-            Login
-          </button>
-          <button
-            className="w-[130px] h-[40px] px-2 py-1 rounded font-semibold border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-slate-100 hover:underline"
-            onClick={() => navigate("/auth/register")}
-          >
-            Create Account
-          </button>
-        </div>
+        {!isLoggedIn ? <NotLogHeaderRight /> : <LogHeaderRight />}
       </div>
     </nav>
   );

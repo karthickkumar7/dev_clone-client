@@ -1,35 +1,34 @@
 import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getAllThreads } from "../../app/slices/threadSlice";
+
 import Article from "../../components/Article";
 import ImgArticle from "../../components/ImgArticle";
 
 const Relevant = () => {
+  const { threads } = useSelector((s) => s.thread);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllThreads());
+  }, []);
+
   return (
     <>
       <ImgArticle />
-      <Article
-        title={"Hey Man Leave her alone!"}
-        username="SimpBoy69"
-        date={"Sep 08"}
-        tags={["sex", "porn", "red"]}
-      />
-      <Article
-        title={"Hey Man Leave her alone!"}
-        username="SimpBoy69"
-        date={"Sep 08"}
-        tags={["sex", "porn", "red"]}
-      />
-      <Article
-        title={"Hey Man Leave her alone!"}
-        username="SimpBoy69"
-        date={"Sep 08"}
-        tags={["sex", "porn", "red"]}
-      />
-      <Article
-        title={"Hey Man Leave her alone!"}
-        username="SimpBoy69"
-        date={"Sep 08"}
-        tags={["sex", "porn", "red"]}
-      />
+      {threads.map((thread) => (
+        <React.Fragment key={thread._id}>
+          <Article
+            title={thread.title}
+            username={thread.user.username}
+            date={thread.createdAt}
+            tags={thread.tags}
+            _id={thread._id}
+          />
+        </React.Fragment>
+      ))}
     </>
   );
 };
