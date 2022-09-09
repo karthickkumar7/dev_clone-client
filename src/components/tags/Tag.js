@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { IoMdPricetags } from "react-icons/io";
 
 const Tag = ({ color }) => {
-  console.log(color);
+  const navigate = useNavigate();
   return (
-    <article className="w-[450px] h-[330px] mr-4 mb-4 bg-white rounded cursor-pointer overflow-hidden shadow-sm hover:shadow">
+    <article
+      className="w-[450px] h-[330px] mr-4 mb-4 bg-white rounded cursor-pointer overflow-hidden shadow-sm hover:shadow"
+      onClick={() => navigate("tag")}
+    >
       <section
         className="w-full h-[20px]"
         style={{ backgroundColor: color }}
@@ -24,8 +29,9 @@ const Tag = ({ color }) => {
           </span>
         </div>
         <div className="w-full h-1/6">
-          <button className="w-[100px] px-2 py-1 rounded-lg font-semibold border hover:bg-slate-200">
-            Follow{" "}
+          <button className="w-[100px] px-2 py-1 flex items-center rounded-lg font-semibold border hover:bg-slate-200">
+            <IoMdPricetags className="mr-2 text-slate-700" />
+            <span>Follow</span>
           </button>
         </div>
       </section>

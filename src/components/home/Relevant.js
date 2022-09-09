@@ -6,7 +6,6 @@ const Relevant = () => {
   return (
     <>
       <ImgArticle />
-
       <Article
         title={"Hey Man Leave her alone!"}
         username="SimpBoy69"

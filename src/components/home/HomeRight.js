@@ -23,7 +23,6 @@ const HomeRight = () => {
         </div>
       </article>
       <article className="w-[340px] h-[400px] mb-3  p-4 flex flex-col justify-between rounded shadow-sm bg-white"></article>
-      <article className="w-[340px] h-[100px] mb-3 p-4 flex flex-col justify-between rounded shadow-sm bg-white"></article>
     </div>
   );
 };
